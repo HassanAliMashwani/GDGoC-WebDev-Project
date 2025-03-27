@@ -16,14 +16,46 @@ This is a **Live News Website** that fetches and displays the latest news dynami
 - **Bootstrap** – For styling  
 - **News API** – Fetching live news  
 
-## 📸 Screenshots  
-### ✅ Home Page  
-![Homepage Screenshot](https://via.placeholder.com/800x400?text=Homepage+Screenshot)  
-
-### ✅ Trending News Section  
-![Trending News](https://via.placeholder.com/800x400?text=Trending+News+Ticker)  
-
 ## 🏗️ Installation & Setup  
 1️⃣ **Clone the repository**  
 ```bash
 git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+2️⃣ Navigate to the project folder
+cd news-website
+3️⃣ Install dependencies
+npm install
+4️⃣ Start the development server
+npm start
+The website will be available at http://localhost:3000/.
+📰 Fetching News from API
+This project uses an external API to fetch live news. Make sure you have an API key from NewsAPI.
+
+Add your API key in src/services/api.js like this:
+
+const API_KEY = "YOUR_NEWS_API_KEY";
+const BASE_URL = "https://newsapi.org/v2/top-headlines";
+
+export const fetchNews = async () => {
+  const response = await fetch(`${BASE_URL}?country=us&apiKey=${API_KEY}`);
+  const data = await response.json();
+  return data.articles;
+};
+
+🌍 Deployment
+To deploy your project on GitHub Pages, run:
+
+npm run build
+git add .
+git commit -m "Deploy to GitHub Pages"
+git push origin main
+Then, set up GitHub Pages in your repository settings.
+
+💡 Contributing
+Want to improve this project? Feel free to:
+✅ Fork the repo
+✅ Create a new branch (feature-branch)
+✅ Submit a Pull Request
+
+📄 License
+This project is open-source and available under the Hassan Ali mashwani's License.
+
