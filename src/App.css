@@ -1,0 +1,231 @@
+/* /* ============================== */
+/* 🌟 General Styles              */
+/* ============================== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* 🌞 Light Theme */
+body {
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* 🌙 Dark Theme */
+body.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* ============================== */
+/* 🟢 Category Heading Styling    */
+/* ============================== */
+/* 🔥 General Styling for Category Heading */
+.category-heading {
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* 📌 Business */
+.business { 
+  color: #d9534f;  
+  background: rgba(217, 83, 79, 0.2); 
+}
+
+/* 📌 Technology */
+.technology { 
+  color: #5bc0de;  
+  background: rgba(91, 192, 222, 0.2);  
+}
+
+/* 📌 Sports */
+.sports { 
+  color: #5cb85c;  
+  background: rgba(92, 184, 92, 0.2);  
+}
+
+/* 📌 Health */
+.health { 
+  color: #f0ad4e;  
+  background: rgba(240, 173, 78, 0.2);  
+}
+
+/* 📌 Entertainment */
+.entertainment { 
+  color: #9b59b6;  
+  background: rgba(155, 89, 182, 0.2);  
+}
+
+/* 📌 General */
+.general { 
+  color: #007bff;  
+  background: rgba(0, 123, 255, 0.2);  
+}
+
+/* 🚀 Ensure It Stays Same in Dark Mode */
+.dark-theme .category-heading { 
+  color: inherit !important;  
+  background: inherit !important;  
+}
+
+
+/* ============================== */
+/* 🖼️ Category Image Styling      */
+/* ============================== */
+.category-image {
+  width: 100%;  /* Ensures full width in card */
+  height: 200px; /* Fixed medium height */
+  object-fit: cover; /* Prevents distortion */
+  border-radius: 10px; /* Smooth corners */
+}
+
+/* ============================== */
+/* 📰 News Card Styling           */
+/* ============================== */
+.news-card {
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Dark Mode for News Cards */
+body.dark-theme .news-card {
+  background-color: #1e1e1e !important;
+  color: white !important;
+}
+
+/* ✅ Dark Mode Fix for Category Labels */
+body.dark-theme .category-label {
+  color: #f0f0f0;
+}
+
+/* ✅ Fix Image Borders in Dark Mode */
+body.dark-theme .category-image {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* ============================== */
+/* 📌 Sidebar Styling             */
+/* ============================== */
+.category-sidebar {
+  background: #222; /* Dark sidebar */
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  width: 250px; /* Set width */
+  position: fixed; /* Keep it fixed */
+  left: 0;
+  top: 80px; /* Below navbar */
+  height: calc(100vh - 80px); /* Full height */
+  overflow-y: auto; /* Scroll if too long */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* ✅ Sidebar Heading */
+.category-sidebar h4 {
+  color: #ff7b00;
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+/* ✅ Sidebar List */
+.category-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ✅ Sidebar List Items */
+.category-sidebar li {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ✅ Sidebar Links */
+.category-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  font-size: 1.1rem;
+  display: block;
+}
+
+/* ✅ Hover Effect */
+.category-link:hover {
+  color: #ff7b00;
+}
+
+/* ============================== */
+/* 📱 Responsive Fix - Hide Sidebar on Mobile */
+/* ============================== */
+@media (max-width: 768px) {
+  .category-sidebar {
+    width: 200px;
+    transform: translateX(-100%);
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .category-sidebar.active {
+    transform: translateX(0);
+  }
+}
+
+/* ============================== */
+/* 📌 Buttons                     */
+/* ============================== */
+.btn-primary {
+  background: #ff7b00;
+  border: none;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #e63946;
+}
+
+/* 🔽 Load More Button */
+.btn-warning {
+  background: #ffc107;
+  color: black;
+  font-weight: bold;
+}
+
+.btn-warning:hover {
+  background: #ff9800;
+}
+
+/* ============================== */
+/* 📱 Responsive Design Fix        */
+/* ============================== */
+@media (max-width: 768px) {
+  .news-container {
+    text-align: center;
+  }
+
+  .news-card img {
+    height: auto;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+
+/* -------------------------------- */
+

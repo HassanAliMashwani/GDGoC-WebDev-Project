@@ -1,0 +1,342 @@
+/* 🌟 General Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* 🌞 Light Theme */
+body {
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* 🌙 Dark Theme */
+body.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* ---------------------------------- */
+/* Navbar Styling - Gradient Background (Same for Light & Dark Mode) */
+.navbar {
+  background: linear-gradient(45deg, #ff7b00, #e63946) !important;
+  color: white !important;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Navbar Links */
+.navbar a {
+  color: white !important;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Navbar Links Hover Effect */
+.navbar a:hover {
+  color: #ffeb3b !important; /* Light yellow for contrast */
+}
+
+/* Ensure Dark Mode Doesn't Change Navbar */
+.dark-theme .navbar {
+  background: linear-gradient(45deg, #ff7b00, #e63946) !important; /* Same as Light Mode */
+  color: white !important;
+}
+
+
+/* ----------------------- */
+
+/* 📌 Sticky Navbar */
+.navbar.fixed-top {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+/* 🔘 Dark Mode Toggle Button */
+.btn-light {
+  background-color: #fac831 !important;
+  color: black;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* 🔘 Dark Mode Button in Dark Theme */
+body.dark-theme .btn-light {
+  background-color: #666 !important;
+  color: white;
+}
+
+/* 🎭 Button Hover Effect */
+.btn:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* ============================== */
+/* 🔥 Trending News Section       */
+/* ============================== */
+.trending-container {
+  background: linear-gradient(45deg, #ff7b00, #e63946);
+  color: white;
+  padding: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.trending-text {
+  font-weight: bold;
+}
+
+.trending-item {
+  display: inline-block;
+  padding: 0 15px;
+  color: #fff;
+}
+
+/* ✅ Responsive Fix for Trending */
+@media (max-width: 768px) {
+  .trending-container {
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  .trending-item {
+    padding: 0 10px;
+  }
+}
+
+/* ============================== */
+/* 📰 News Card Styling           */
+/* ============================== */
+.news-card {
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ News Card Dark Mode */
+body.dark-theme .news-card {
+  background-color: #1e1e1e !important;
+  color: white !important;
+}
+
+/* 🖼️ Fix Image Sizing */
+.news-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* ============================== */
+/* 📌 Sidebar                     */
+/* ============================== */
+.category-sidebar {
+  background: #222;
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  position: sticky;
+  top: 80px;
+}
+
+.category-sidebar h4 {
+  color: #ff7b00;
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.category-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.category-sidebar li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.category-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 1.1rem;
+}
+
+.category-link:hover {
+  color: #ff7b00;
+}
+
+/* ✅ Hide Sidebar on Mobile */
+@media (max-width: 768px) {
+  .category-sidebar {
+    display: none;
+  }
+}
+
+/* ============================== */
+/* 📌 Buttons                     */
+/* ============================== */
+.btn-primary {
+  background: #ff7b00;
+  border: none;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #e63946;
+}
+
+/* 🔽 Load More Button */
+.btn-warning {
+  background: #ffc107;
+  color: black;
+  font-weight: bold;
+}
+
+.btn-warning:hover {
+  background: #ff9800;
+}
+
+/* ============================== */
+/* 📱 Responsive Design            */
+/* ============================== */
+@media (max-width: 768px) {
+  .news-container {
+    text-align: center;
+  }
+
+  .news-card img {
+    height: auto;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+
+/* 🟢 Category Heading Styling */
+.category-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* 🔵 Default "Category:" label */
+.category-label {
+  color: #333; /* Dark gray */
+  font-weight: 600;
+}
+
+/* 🎨 Dynamic Category Name Colors */
+.business { color: #d9534f; font-weight: bold; }  /* Red */
+.technology { color: #5bc0de; font-weight: bold; }  /* Light Blue */
+.sports { color: #5cb85c; font-weight: bold; }  /* Green */
+.health { color: #f0ad4e; font-weight: bold; }  /* Orange */
+.entertainment { color: #9b59b6; font-weight: bold; }  /* Purple */
+.general { color: #007bff; font-weight: bold; }  /* Blue */
+
+
+/* 🟢 Category Heading Styling */
+.category-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* 🔵 Default "Category:" label */
+.category-label {
+  color: black; /* Default dark color */
+  font-weight: 700;
+}
+
+/* 🎨 Category Name Dynamic Colors */
+.business { color: #d9534f; font-weight: bold; background: rgba(217, 83, 79, 0.1); padding: 3px 8px; border-radius: 5px; }
+.technology { color: #5bc0de; font-weight: bold; background: rgba(91, 192, 222, 0.1); padding: 3px 8px; border-radius: 5px; }
+.sports { color: #5cb85c; font-weight: bold; background: rgba(92, 184, 92, 0.1); padding: 3px 8px; border-radius: 5px; }
+.health { color: #f0ad4e; font-weight: bold; background: rgba(240, 173, 78, 0.1); padding: 3px 8px; border-radius: 5px; }
+.entertainment { color: #9b59b6; font-weight: bold; background: rgba(155, 89, 182, 0.1); padding: 3px 8px; border-radius: 5px; }
+.general { color: #007bff; font-weight: bold; background: rgba(0, 123, 255, 0.1); padding: 3px 8px; border-radius: 5px; }
+
+/* 🖼️ Image Resizing & Consistency */
+.category-image {
+  width: 100%;
+  height: 200px; /* Fixed height for consistency */
+  object-fit: cover; /* Ensures images maintain aspect ratio */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* ✅ News Card Styling */
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Dark Mode Support */
+body.dark-theme .card {
+  background-color: #1e1e1e !important;
+  color: white !important;
+}
+
+/* 📱 Responsive Fix */
+@media (max-width: 768px) {
+  .category-heading {
+    font-size: 1.5rem;
+  }
+
+  .category-image {
+    height: 150px; /* Smaller images on mobile */
+  }
+}
+
+
+
+/* ----------------------------------------- */
+/* search  */
+
+/* ----------------------------------------- */
+
+
+.search-container {
+  position: relative;
+}
+
+.search-input {
+  width: 30px; /* Starts small */
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  transition: width 0.3s ease-in-out;
+  background-color: white;
+  color: black;
+}
+
+.search-input:hover,
+.search-input:focus {
+  width: 200px; /* Expands left on hover */
+  padding: 5px 10px;
+  background-color: white;
+  color: black;
+}
